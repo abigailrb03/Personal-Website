@@ -6,27 +6,17 @@ let selectedFrosting = null
 
 let isTopping = false
 let selectedTopping = null
+
+let beenRoasted = false
 //variables for x and y values
 var c1 = 550;
 var c2 = 400
 var c3 = 300
 var c4 = 200
-// var vanillaIcing = loadImage('https://i.imgur.com/CvsAtKW.png')
-// var chocolateIcing = loadImage('https://i.imgur.com/hrVpTFf.png')
-// var creamCheese = loadImage('https://i.imgur.com/CvsAtKW.png')
-// //fruit
-// var strawberry = loadImage("https://i.imgur.com/34lO0TE.png")
-// var raspberries = loadImage('https://i.imgur.com/Z7fHVdz.png')
-// //cake
-// var redVelvet = loadImage('https://i.imgur.com/GFyYf9q.png')
-// var strawberryCake = loadImage('https://i.imgur.com/Ek8EBiW.png')
-// var chocolateCake = loadImage('https://i.imgur.com/NbJeUQU.png')
-// var carrotCake = loadImage('https://i.imgur.com/wNrdtBQ.png')
-// var vanillaCake = loadImage('https://i.imgur.com/Nt1aLnI.png')
 
 
 function setup() {
-  frameRate(10)
+  frameRate(5)
   createCanvas(windowWidth, windowHeight)
   background('#E1EDE0')
   textSize(50)
@@ -56,6 +46,7 @@ function draw() {
       image(img, 1100, 500, 200, 100);
     })
   }
+
   if (isCake != false && isFrosting == false && isTopping == false) {
     text("Please select a frosting flavor!", 425, 100)
     var vanillaFrosting = loadImage('https://i.imgur.com/CvsAtKW.png', img => {
@@ -68,16 +59,23 @@ function draw() {
 
   if (isCake != false && isFrosting != false && isTopping == false) {
     //loading toppings
+    text("Please select a topping!", 425, 100)
     loadImage("https://i.imgur.com/34lO0TE.png", img => {
-      image(img, c1 - 100, c2 - 100, 50, 50);
+      image(img, c1 + 25, c2 - 120, 100, 100);
     })
+    loadImage("https://i.imgur.com/Z7fHVdz.png", img => {
+      image(img, c1 + 150, c2 - 120, 100, 100);
+    })
+  }
+
+  if (isCake != false && isTopping != false && isFrosting != false && beenRoasted == false) {
+    let roastMe = createButton('My cake is done! Roast me!')
+    roastMe.position(600, 300)
+    roastMe.mousePressed(roastTime);
   }
 
   }
   
-
-
-
 
 function mouseClicked() {
   if (isCake == false) {
@@ -113,17 +111,21 @@ function mouseClicked() {
   }
   loadCake();
   loadFrosting();
-
+  if (isCake != false && isFrosting != false && isTopping == false) {
+    if (mouseX > c1 + 25 && mouseX < c1 + 125 && mouseY > c2 - 120 && mouseY < c2 -20) {
+      setup();
+      isTopping = true
+      selectedTopping = 1
+    } else if (mouseX > c1 + 150 && mouseX < c1 + 250 && mouseY > c2 - 120 && mouseY < c2 - 20) {
+      setup();
+      isTopping = true
+      selectedTopping = 2
+    }
+  }
+  loadCake();
+  loadFrosting();
+  loadToppings();
   
-}
-
-function combineImage(img1, img2) {
-  loadImage(img1, img => {
-    image(img, c1, c2, c3, c4);
-  })
-  loadImage(img2, img => {
-    image(img, c1, 490, c3, c4);
-  })
 }
 
 
@@ -158,4 +160,44 @@ function loadFrosting() {
       image(img, c1, c2 - 15, c3, c4);
     })
   }
+}
+
+function loadToppings(){
+  if (selectedTopping == 1) {
+    loadImage("https://i.imgur.com/34lO0TE.png", img => {
+  image(img, c1 + 25, c2 - 40, 100, 100);
+    })
+  } else if (selectedTopping == 2) {
+    loadImage("https://i.imgur.com/Z7fHVdz.png", img => {
+  image(img, c1 + 25, c2 - 40, 100, 100);
+    })
+  }
+}
+
+function roastTime() {
+  let roastNum = Math.floor(Math.random() * 10);
+  if (roastNum == 0) {
+    text("where the fuck is my lamb sauce", 400, 200)
+  } else if (roastNum == 1) {
+    text( "What are you?!?!? YOU'RE AN IDIOT SANDWHICH", 200, 200)
+  } else if (roastNum == 2) {
+    text ("this is actually a decent cake. good job", 500, 200)
+  } else if (roastNum == 3) {
+    text ("My gran could do better than this. AND SHE'S DEAD", 10, 200)
+  } else if (roastNum == 4) {
+    text("This cake is so shit that all the onions in the kitchen are crying", 10, 200)
+  } else if (roastNum == 5) {
+    text("FUCK OFF. FUCK OFF. FUCK OFF", 350, 200)
+  } else if (roastNum == 6) {
+    text("I wish you'd jump in the oven! \n That would make my life a lot easier!", 300, 200)
+  } else if (roastNum == 7) {
+    text("What do you want?? A fucking MEDAL?!", 200, 200)
+  } else if (roastNum == 8) {
+    text("ARE YOU STUPID???", 400, 200)
+  } else if (roastNum == 9) {
+    text("for what we are about to eat, \n may the lord make us truly not vomit", 300, 200)
+  } else {
+    text("I have never ever ever met someone I believe in \n as little as you", 300, 200)
+  }
+  beenRoasted = true
 }
