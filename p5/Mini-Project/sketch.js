@@ -183,21 +183,21 @@ function roastTime() {
   } else if (roastNum == 2) {
     text ("this is actually a decent cake. good job", 500, 200)
   } else if (roastNum == 3) {
-    text ("My gran could do better than this. AND SHE'S DEAD", 10, 200)
+    text ("My gran could do better than this. AND SHE'S DEAD", 100, 200)
   } else if (roastNum == 4) {
     text("This cake is so shit that all the onions in the kitchen are crying", 10, 200)
   } else if (roastNum == 5) {
     text("FUCK OFF. FUCK OFF. FUCK OFF", 350, 200)
   } else if (roastNum == 6) {
-    text("I wish you'd jump in the oven! \n That would make my life a lot easier!", 300, 200)
+    text("I wish you'd jump in the oven! \nThat would make my life a lot easier!", 300, 200)
   } else if (roastNum == 7) {
     text("What do you want?? A fucking MEDAL?!", 200, 200)
   } else if (roastNum == 8) {
     text("ARE YOU STUPID???", 400, 200)
   } else if (roastNum == 9) {
-    text("for what we are about to eat, \n may the lord make us truly not vomit", 300, 200)
+    text("for what we are about to eat, \nmay the lord make us truly not vomit", 300, 200)
   } else {
-    text("I have never ever ever met someone I believe in \n as little as you", 300, 200)
+    text("I have never ever ever met someone I believe in \nas little as you", 300, 200)
   }
   beenRoasted = true
 }
