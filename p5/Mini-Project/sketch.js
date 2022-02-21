@@ -74,7 +74,7 @@ function draw() {
     roastMe.mousePressed(roastTime);
   }
 
-  }
+}
   
 
 function mouseClicked() {
@@ -175,13 +175,17 @@ function loadToppings(){
 }
 
 function roastTime() {
+  setup();
+  loadCake();
+  loadFrosting();
+  loadToppings();
   let roastNum = Math.floor(Math.random() * 10);
   if (roastNum == 0) {
     text("where the fuck is my lamb sauce", 400, 200)
   } else if (roastNum == 1) {
     text( "What are you?!?!? YOU'RE AN IDIOT SANDWHICH", 200, 200)
   } else if (roastNum == 2) {
-    text ("this is actually a decent cake. good job", 500, 200)
+    text ("this is actually a decent cake. good job", 450, 200)
   } else if (roastNum == 3) {
     text ("My gran could do better than this. AND SHE'S DEAD", 100, 200)
   } else if (roastNum == 4) {
@@ -189,9 +193,9 @@ function roastTime() {
   } else if (roastNum == 5) {
     text("FUCK OFF. FUCK OFF. FUCK OFF", 350, 200)
   } else if (roastNum == 6) {
-    text("I wish you'd jump in the oven! \nThat would make my life a lot easier!", 300, 200)
+    text("I wish you'd jump in the oven! \nThat would make my life a lot easier!", 350, 200)
   } else if (roastNum == 7) {
-    text("What do you want?? A fucking MEDAL?!", 200, 200)
+    text("What do you want?? A fucking MEDAL?!", 250, 200)
   } else if (roastNum == 8) {
     text("ARE YOU STUPID???", 400, 200)
   } else if (roastNum == 9) {
@@ -199,5 +203,5 @@ function roastTime() {
   } else {
     text("I have never ever ever met someone I believe in \nas little as you", 300, 200)
   }
-  beenRoasted = true
+  beenRoasted = true;
 }
