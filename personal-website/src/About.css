@@ -1,0 +1,44 @@
+.about{
+    display: flex;
+    background-color: #F2F9EF;
+    height: 90vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .imgAndText {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .aboutText{
+    display: flex;
+    padding-left: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .mainimg{
+      display: flex;
+      padding-bottom: 40px;
+  }
+  .aboutDescription{
+      font-size: 20px;
+      width: 60vh;
+  }
+  .aboutTitle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #BB3E03;
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 10px;
+  }
+  
+  .aboutButtons {
+    display: flex;
+    background-color: transparent;
+    flex-direction: row;
+  }

@@ -1,0 +1,25 @@
+.projects{
+  display: flex;
+  padding-top: 40px;
+  color: #000000;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  flex-direction: column;
+}
+.project{
+  display: flex;
+  padding-top: 10px;
+  flex-direction: row;
+}
+.projDescription{
+  display: flex;
+  width: 20vw;
+  padding-left: 15px;
+}
+
+.horizontalLine{
+  display: flex;
+  background-color: black;
+  height: 1px;
+}

@@ -1,0 +1,97 @@
+.experience {
+    display: flex;
+    padding-top: 40px;
+    color: #000000;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    flex-direction: column;
+  }
+  .Title{
+    display: flex;
+    padding-bottom: 20px;
+    font-size: 40px;
+  }
+.experiencesCol{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+  .expCol1{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .hoverText{
+    position: absolute;
+    z-Index: 0;
+    top: 10px;
+    left: 10px;
+    height: 18vh;
+    width: 28vw;
+    background-color: #ced4da;
+  }
+  .exp1{
+      position: relative;
+      flex-direction: column;
+      padding-left: 10px;
+      padding-right: 10px;
+      z-index: 1;
+  }
+  
+  .eDescription{
+    display: flex;
+    padding-top:5px;
+    height: 18vh;
+    width: 28vw;
+    flex-direction: row;
+    color:  #6D6C6C;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .etext{
+    flex-direction: column;
+    padding-left: 15px;
+    justify-content: center;
+  }
+  .eTitle{
+    display: flex;
+    font-size: 20px;
+    color: #000000
+  }
+  
+  .blankBox{
+    display: flex;
+    height: 16vh;
+    width: 28vw;
+  }
+
+  /* .blankBox:hover{
+    display: flex;
+    height: 120px;
+  } */
+  /* .hoverDescription:hover{
+      display: flex;
+      background-color: blue;
+  } */
+  .eDescription:hover{
+      opacity:0; filter:alpha(opacity=0);
+  }
+
+  
+  
+  
+  .verticalLine {
+    display: flex;
+    background-color: black;
+    width: 1px;
+    margin: 6px 0;
+  }
+  .horizontalLine{
+      background-color: black;
+      height: 1px;
+  }
+  /* have two divs with different content stacked on top of each other, this way when you hover over one,
+  have the top display None and it will reveal the one below */
